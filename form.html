@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from jthemes.net/themes/html/wizard-form/v3/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Mar 2021 18:45:23 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/colors/switch.css">
+    <!-- Color Alternatives -->
+    <link href="assets/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+    <link href="assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+    <link href="assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+    <link href="assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+
+</head>
+
+<body>
+
+    <!-- This code is use for color chooser, you can delete -->
+    <div id="switch-color" class="color-switcher">
+        <div class="open"><i class="fas fa-cog"></i></div>
+        <h4>COLOR OPTION</h4>
+        <ul>
+            <li><a class="color-2" onclick="setActiveStyleSheet('color-2'); return false;" href="#"><i
+                        class="fas fa-cog"></i></a> </li>
+            <li><a class="color-3" onclick="setActiveStyleSheet('color-3'); return false;" href="#"><i
+                        class="fas fa-cog"></i></a> </li>
+            <li><a class="color-4" onclick="setActiveStyleSheet('color-4'); return false;" href="#"><i
+                        class="fas fa-cog"></i></a> </li>
+            <li><a class="color-5" onclick="setActiveStyleSheet('color-5'); return false;" href="#"><i
+                        class="fas fa-cog"></i></a> </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+
+
+    <div class="wrapper wizard d-flex clearfix multisteps-form position-relative">
+        <div class="steps order-2 position-relative w-25">
+            <div class="multisteps-form__progress">
+                <span class="multisteps-form__progress-btn js-active" title="Application data"><i
+                        class="far fa-user"></i><span>Personal information</span></span>
+                <span class="multisteps-form__progress-btn" title="Tax residency"><i
+                        class="far fa-user"></i><span>Solution Provider</span></span>
+                <span class="multisteps-form__progress-btn" title="Indentity documents"><i
+                        class="far fa-user"></i><span>Personal information</span></span>
+                <span class="multisteps-form__progress-btn" title="Investability"><i
+                        class="far fa-user"></i><span>Choose a payment</span></span>
+                <span class="multisteps-form__progress-btn" title="Review"><i class="far fa-user"></i><span>Review
+                    </span></span>
+            </div>
+        </div>
+        <form class="multisteps-form__form w-75 order-1" action="#" id="wizard">
+            <div class="form-area position-relative">
+                <!-- div 1 -->
+                <div class="multisteps-form__panel js-active" data-animation="slideHorz">
+                    <div class="wizard-forms">
+                        <div class="inner pb-100 clearfix">
+                            <div class="wizard-title text-center">
+                                <h3>Please, enter personal information</h3>
+                                <p></p>
+                            </div>
+                            <div class="wizard-photo-area">
+                                <div class="wizard-photo-upload position-relative">
+                                    <label for="files">Upload Image</label>
+                                    <input id="files" type='file' onchange="readURL(this);" style="display: none;">
+                                    <div class="display-img text-center">
+                                        <img id="profile-image" src="assets/img/pf1.png" alt="your image" />
+                                    </div>
+                                </div>
+                                <div class="photo-upload-text"> Let's take a picture or upload a photo of individual.
+                                </div>
+                            </div>
+                            <div class="wizard-form-field mb-85">
+                                <div class="wizard-form-input">
+                                    <label>Name</label>
+                                    <input type="text" name="name" class="userName">
+
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="email">
+                                </div>
+                                <div class="wizard-form-input mb-60 mt-60">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>What are you?</label>
+                                    <div class="wizard-checked">
+                                        <label class="checkbox-circle">
+                                            <input type="radio" checked="checked" name="student_type"
+                                                value="University Student" onclick="whoareyou(`student`)">
+                                            <span class="checkmark"></span>
+                                            University Student
+                                        </label>
+                                    </div>
+                                    <div class="wizard-checked">
+                                        <label class="checkbox-circle">
+                                            <input type="radio" name="student_type" value="Professional"
+                                                onclick="whoareyou(`professional`)"">
+                                            <span class=" checkmark"></span>
+                                            Professional
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>phone</label>
+                                    <input type="text" name="phone" class="phone">
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>sex</label>
+                                    <input type="text" name="sex" class="sex">
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>Date Of Birth</label>
+                                    <input type="date" name="dob" class="date">
+                                </div>
+                                <div class="wizard-form-input mb-60 mt-60">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>Do you have a Voter ID?</label>
+                                    <div class="wizard-checked">
+                                        <label class="checkbox-circle">
+                                            <input type="radio" checked="checked" name="ssn"
+                                                value="I Have a US Tax ID (SSN)" onclick="voterIdValue(true)">
+                                            <span class="checkmark"></span>
+                                            <span>I Have a Voter ID</span>
+                                        </label>
+                                    </div>
+                                    <div class="wizard-checked">
+                                        <label class="checkbox-circle">
+                                            <input type="radio" name="ssn" value="I Don't have a US Tax ID (SSN)"
+                                                onclick="voterIdValue(false)">
+                                            <span class="checkmark"></span>
+                                            <span>I don’t have a Voter ID</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-field-text">
+                                </div>
+                            </div>
+                            <div class="wizard-v3-progress">
+                                <span>1 to 5 step</span>
+                                <h3>0% to complete</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 0%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.inner -->
+                        <div class="vector-img-one">
+                            <img src="assets/img/vb1.png" alt="">
+                        </div>
+                        <div class="actions">
+                            <ul>
+                                <li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- div 2 -->
+                <div class="multisteps-form__panel" data-animation="slideHorz">
+                    <div class="wizard-forms section-padding">
+                        <div class="inner pb-100 clearfix">
+                            <div class="wizard-title text-center">
+                                <h3>Please, enter personal information</h3>
+                                <p> </p>
+                            </div>
+                            <div class="wizard-solution-select">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="option_item">
+                                            <input type="checkbox" class="checkbox" onclick="adharCardValue()">
+                                            <span class="option_inner">
+                                                <span class="tickmark"></span>
+                                                <span class="icon"><img src="assets/img/d1.png" alt=""></span>
+                                                <span class="name">I have Adhar card</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="option_item">
+                                            <input type="checkbox" class="checkbox" onclick="rationCardValue()">
+                                            <span class="option_inner">
+                                                <span class="tickmark"></span>
+                                                <span class="icon"><img src="assets/img/d1.png" alt=""></span>
+                                                <span class="name">I have Ration Card</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="option_item">
+                                            <input type="checkbox" class="checkbox" onclick="panCardValue()">
+                                            <span class="option_inner">
+                                                <span class="tickmark"></span>
+                                                <span class="icon"><img src="assets/img/d1.png" alt=""></span>
+                                                <span class="name">I have Pan Card</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wizard-note-subject pb-100">
+                                <div class="wizard-form-input select-option-area">
+                                    <label>City you vote in</label>
+                                    <select class="voteCity">
+                                        <option>Subject 1</option>
+                                        <option>Subject 2</option>
+                                        <option>Subject 3</option>
+                                        <option>Subject 4</option>
+                                    </select>
+                                </div>
+                                <div class="wizard-form-input select-option-area">
+                                    <label>State you vote in</label>
+                                    <select class="voteState">
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
+                                        <option value="Puducherry">Puducherry</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                    </select>
+                                </div>
+                                <div class="wizard-form-input">
+                                    <label>Address</label>
+                                    <textarea class="address"></textarea>
+                                </div>
+                                <!-- <div class="wizard-form-input">
+                                    <div class="wizard-checked">
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span>I Have a US Tax ID (SSN)</span>
+                                    </div>
+                                    <div class="wizard-checked">
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span>I don’t have a US Tax ID (SSN)</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="wizard-v3-progress">
+                                <span>2 to 5 step</span>
+                                <h3>38% to complete</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 38%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.inner -->
+                        <div class="vector-img-one">
+                            <img src="assets/img/vb2.png" alt="">
+                        </div>
+                        <div class="actions">
+                            <ul>
+                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+                                </li>
+                                <li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- div 3 -->
+                <div class="multisteps-form__panel" data-animation="slideHorz">
+                    <div class="wizard-forms">
+                        <div class="inner pb-100 clearfix">
+                            <div class="wizard-title text-center">
+                                <h3>Please, provide feedback on work of current leader</h3>
+                                <p> </p>
+                            </div>
+
+                            <div class="wizard-form-input mb-60 mt-60">
+                                <div class="line line2"></div>
+                            </div>
+                            <div class="wizard-duration mb-60">
+                                <span class="wizard-sub-text">How Happy Are You With His/Her Work</span>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="duration-option">
+                                            <input type="radio" name="duration-service" value="4 weeks"
+                                                class="d-checkbox" onclick="satisfaction(1)">
+                                            <span class="checkbox-circle-tick"></span>
+                                            <span class="duration-box text-center">
+                                                <span class="title"><svg xmlns="http://www.w3.org/2000/svg" width="60"
+                                                        height="60" fill="currentColor" class="bi bi-emoji-smile"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                                                    </svg></span>
+                                                <span>Good</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="duration-option">
+                                            <input type="radio" name="duration-service" value="6 weeks"
+                                                class="d-checkbox" onclick="satisfaction(2)">
+                                            <span class="checkbox-circle-tick"></span>
+                                            <span class="duration-box text-center">
+                                                <span class="title"><svg xmlns="http://www.w3.org/2000/svg" width="60"
+                                                        height="60" fill="currentColor" class="bi bi-emoji-neutral"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M4 10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5zm3-4C7 5.672 6.552 5 6 5s-1 .672-1 1.5S5.448 8 6 8s1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5S9.448 8 10 8s1-.672 1-1.5z" />
+                                                    </svg></span>
+                                                <span>Fair</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="duration-option">
+                                            <input type="radio" name="duration-service" value="9 weeks"
+                                                class="d-checkbox" onclick="satisfaction(3)">
+                                            <span class="checkbox-circle-tick"></span>
+                                            <span class="duration-box text-center">
+                                                <span class="title"><svg xmlns="http://www.w3.org/2000/svg" width="60"
+                                                        height="60" fill="currentColor" class="bi bi-emoji-frown"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                                                    </svg></span>
+                                                <span>Bad</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wizard-form-input mb-60 mt-60">
+                                <div class="line line2"></div>
+                            </div>
+                            <div class="wizard-day-item">
+                                <span class="wizard-sub-text">Areas You Think Need Improvement</span>
+                                <div class="wizard-checkbox-option">
+                                    <ul>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox"
+                                                    onclick="improvScope(`Education`)">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Education</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox"
+                                                    onclick="improvScope(`Road`)">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Road</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox"
+                                                    onclick="improvScope(`Electricity`)">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Electricity</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox"
+                                                    onclick="improvScope(`Farming`)">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Farming</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wizard-form-input mb-60 mt-60">
+                                <div class="line line2"></div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="wizard-v3-progress">
+                                <span>3 to 5 step</span>
+                                <h3>59% to complete</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 59%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./inner -->
+                        <div class="vector-img-one">
+                            <img src="assets/img/vb3.png" alt="">
+                        </div>
+                        <div class="actions">
+                            <ul>
+                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+                                </li>
+                                <li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- div 4 -->
+                <div class="multisteps-form__panel" data-animation="slideHorz">
+                    <div class="wizard-forms">
+                        <div class="inner pb-200 clearfix">
+                            <div class="wizard-title text-center">
+                                <h3>Choose Leader, You have Voted</h3>
+                                <p></p>
+                            </div>
+                            <div class="wizard-form-input select-caret">
+                                <select class="yearOfVoting">
+                                    <option>2021</option>
+                                    <option>2020</option>
+                                    <option>2019</option>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div id="slider-service" class="wizard-service-slide">
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Aam Aadmi Party`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws1.png" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Aam Aadmi Party
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Samajwadi Party`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Jim Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws2.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Samajwadi Party
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Shiv Sena`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mrs Katie Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws3.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Shiv Sena
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Kerala Congress (M)`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Doe Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws4.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Kerala Congress (M)
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Maharashtra Navnirman Sena`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws5.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Maharashtra Navnirman Sena
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Rashtriya Janata Dal`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Jone Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws6.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Rashtriya Janata Dal
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Sikkim Democratic Front`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws1.png" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Sikkim Democratic Front
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Telangana Rashtra Samithi`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws2.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Telangana Rashtra Samithi
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Goa Forward Party`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws3.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Goa Forward Party
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Indian National Lok Dal`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws4.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Indian National Lok Dal
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Janata Dal (Secular)`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws5.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Janata Dal (Secular)
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="services-box-item">
+                                    <input type="radio" name="contact_person" value="Mr Leo" class="service-checkbox"
+                                        onclick="partyVoted(`Mr Leo`)">
+                                    <span class="w-service-box text-center position-relative">
+                                        <span class="tooltip-info" data-toggle="tooltip" data-placement="top"
+                                            title="Mr Leo Service officer"></span>
+                                        <span class="service-icon">
+                                            <img src="assets/img/ws6.jpg" alt="">
+                                        </span>
+                                        <span class="service-text">
+                                            Mr Leo
+                                        </span>
+                                        <span class="option-seclect">
+                                            <span>Selected</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="wizard-v3-progress">
+                                <span>4 to 5 step</span>
+                                <h3>79% to complete</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 79%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.inner -->
+                        <div class="vector-img-one">
+                            <img src="assets/img/vb4.png" alt="">
+                        </div>
+                        <div class="actions">
+                            <ul>
+                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+                                </li>
+                                <li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- div 5 -->
+                <div class="multisteps-form__panel" data-animation="slideHorz">
+                    <div class="wizard-forms">
+                        <div class="inner pb-100">
+                            <div class="wizard-title text-center">
+                                <h3>Choose Service Provider</h3>
+                                <p>has been a while. I would like to present you the project I work </p>
+                            </div>
+                            <div class="wizard-day-item">
+                                <span class="wizard-sub-text">Confirmation Service Via</span>
+                                <div class="wizard-checkbox-option">
+                                    <ul>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Sms</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Email Address</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="block-option">
+                                                <input type="checkbox" name="day-checkout" class="checked-checkbox">
+                                                <span class="checkbox-tick"></span>
+                                                <span class="day-label">Call Number</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wizard-form-input mb-60 mt-60">
+                                <div class="line line2"></div>
+                            </div>
+                            <div class="social-media-find">
+                                <span class="wizard-sub-text">Confirmation Service Via</span>
+                                <div class="social-find-caret">
+                                    <select>
+                                        <option>Social media</option>
+                                        <option>Social media</option>
+                                        <option>Social media</option>
+                                        <option>Social media</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="wizard-v3-progress">
+                                <span>5 to 5 step</span>
+                                <h3>100% to complete</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.inner -->
+                        <div class="vector-img-one position-relative">
+                            <img src="assets/img/vb5.png" alt="">
+                        </div>
+                        <div class="actions mt-60">
+                            <ul>
+                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+                                </li>
+                                <li><button title="NEXT" class="submitBtn">SUBMIT <i
+                                            class="fa fa-arrow-right"></i></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/switch.js"></script>
+    <script src="customjs/surveryData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profile-image')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        };
+        $("#customFile").change(function () {
+            filename = this.files[0].name
+        });
+    </script>
+</body>
+
+
+<!-- Mirrored from jthemes.net/themes/html/wizard-form/v3/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Mar 2021 18:45:36 GMT -->
+
+</html>
